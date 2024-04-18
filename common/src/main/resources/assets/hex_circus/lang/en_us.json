@@ -1,0 +1,19 @@
+{
+  "hexcasting.spell.hex_circus:straight_particle": "Linear Particle",
+  "hexcasting.spell.hex_circus:Bezier_particle": "Bezier Particle",
+
+
+  "hexcasting.spell.hex_circus:linear_particle": "Linear Particle",
+  "hexcasting.spell.hex_circus:bezier_particle": "Bezier Particle",
+
+  "hexcasting.entry.circus_particles": "Particles",
+
+  "hex_circus.page.particles.opening.0": "I have figured out the secrets of showmanship by studying the magic used by the fabled Illusioner!$(br2)The following pages contain information on how to make ephemeral particles to really bring my spells to life!",
+
+  "hex_circus.page.particles.linear.0": "Summons a singular particle that moves in a straight line from the first vector to the second, the particle takes on the color of the third vector in the form of something called \"RGB\" values between 0 to 1.",
+  "hex_circus.page.particles.linear.1": "The number appears to control the speed at which the particle moves, although this is relative to the path length, a speed of 1 seems to make the particle finish its journey after about a second. Costs one 10 thousandth of an amethyst dust.",
+
+
+  "hex_circus.page.particles.bezier.0": "Works the same as Linear Particle, but with an extra vector between the end point and the color",
+  "hex_circus.page.particles.bezier.1": "This new vector seems to attract the particle during its journey, making the line in which it moves bend towards the third vector.$(br2)Costs one 2 thousandth of an amethyst dust.$(br2)$(br2)Side note: The particle never seems to actually reach the third vector"
+}
