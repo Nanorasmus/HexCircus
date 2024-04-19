@@ -21,25 +21,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class CastingParticles {
-    /*
-    public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister.create(HexCircus.MOD_ID, Registry.PARTICLE_TYPE_KEY);
-
-    public static ParticleEffect bezierParticle;
-
-    public static final RegistrySupplier<BezierLineParticleType> BEZIER_PARTICLE =
-            PARTICLE_TYPES.register("bezier_particle", () ->
-                    new BezierLineParticleType(false) {});
-*/
     public static final DefaultParticleType STATIC_PARTICLE = ParticleTypes.END_ROD;
     public static final DefaultParticleType BEZIER_PARTICLE = ParticleTypes.TOTEM_OF_UNDYING;
 
     static MinecraftClient client = MinecraftClient.getInstance();
 
     public static void registerParticles() {
-        /*
-        PARTICLE_TYPES.register();
-        ParticleProviderRegistry.register(BEZIER_PARTICLE, BezierLineParticle.Factory::new);
-*/
 
         ParticleProviderRegistry.register(BEZIER_PARTICLE, BezierLineParticle.Factory::new);
         ParticleProviderRegistry.register(STATIC_PARTICLE, LinearLineParticle.Factory::new);
