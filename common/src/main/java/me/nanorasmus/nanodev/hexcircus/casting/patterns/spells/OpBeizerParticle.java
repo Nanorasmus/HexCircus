@@ -1,15 +1,14 @@
-package me.nanorasmus.nanodev.hexcircus.casting.patterns;
+package me.nanorasmus.nanodev.hexcircus.casting.patterns.spells;
 
 import at.petrak.hexcasting.api.spell.ConstMediaAction;
 import at.petrak.hexcasting.api.spell.OperationResult;
 import at.petrak.hexcasting.api.spell.OperatorUtils;
 import at.petrak.hexcasting.api.spell.casting.CastingContext;
 import at.petrak.hexcasting.api.spell.casting.eval.SpellContinuation;
-import at.petrak.hexcasting.api.spell.iota.*;
+import at.petrak.hexcasting.api.spell.iota.Iota;
 import dev.architectury.utils.GameInstance;
 import me.nanorasmus.nanodev.hexcircus.networking.NetworkingHandler;
 import me.nanorasmus.nanodev.hexcircus.networking.custom.SpawnBezierParticle;
-import me.nanorasmus.nanodev.hexcircus.networking.custom.SpawnLinearParticle;
 import me.nanorasmus.nanodev.hexcircus.particle.CastingParticles;
 import net.minecraft.client.particle.Particle;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -20,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OpLinearParticle implements ConstMediaAction {
+public class OpBeizerParticle implements ConstMediaAction {
     @NotNull
     @Override
     public Text getDisplayName() {
@@ -37,10 +36,10 @@ public class OpLinearParticle implements ConstMediaAction {
     public boolean isGreat() { return false; }
 
     @Override
-    public int getArgc() { return 4; }
+    public int getArgc() { return 5; }
 
     @Override
-    public int getMediaCost() { return 1; }
+    public int getMediaCost() { return 5; }
 
     @NotNull
     @Override
@@ -50,8 +49,11 @@ public class OpLinearParticle implements ConstMediaAction {
         ctx.assertVecInRange(a);
         Vec3d b = OperatorUtils.getVec3(args, 1, getArgc());
         ctx.assertVecInRange(b);
-        Vec3d color = OperatorUtils.getVec3(args, 2, getArgc());
-        Double speed = OperatorUtils.getDoubleBetween(args, 3, 0.1, 5, getArgc());
+        Vec3d c = OperatorUtils.getVec3(args, 2, getArgc());
+        ctx.assertVecInRange(b);
+        Vec3d color = OperatorUtils.getVec3(args, 3, getArgc());
+        Double speed = OperatorUtils.getDoubleBetween(args, 4, 0.1, 5, getArgc());
+
 
         // Send to all players
         ArrayList<ServerPlayerEntity> players = new ArrayList<>();
@@ -59,19 +61,16 @@ public class OpLinearParticle implements ConstMediaAction {
 
         for (int i = 0; i < players.size(); i++) {
             ServerPlayerEntity p = players.get(i);
-            NetworkingHandler.CHANNEL.sendToPlayer(p, new SpawnLinearParticle(a, b, speed.floatValue(), color));
+            NetworkingHandler.CHANNEL.sendToPlayer(p, new SpawnBezierParticle(a, b, c, speed.floatValue(), color));
         }
 
         return new ArrayList<>();
     }
 
-    private float clamp01(double value) {
-        return (float) Math.min(1, Math.max(0, value));
-    }
 
     @NotNull
     @Override
     public OperationResult operate(SpellContinuation continuation, List<Iota> stack, Iota ravenmind, CastingContext castingContext){
-        return ConstMediaAction.DefaultImpls.operate(this, continuation, stack, ravenmind, castingContext);
+        return DefaultImpls.operate(this, continuation, stack, ravenmind, castingContext);
     }
 }

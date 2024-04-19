@@ -4,6 +4,8 @@ import at.petrak.hexcasting.api.PatternRegistry;
 import at.petrak.hexcasting.api.spell.math.HexDir;
 import at.petrak.hexcasting.api.spell.math.HexPattern;
 import me.nanorasmus.nanodev.hexcircus.HexCircus;
+import me.nanorasmus.nanodev.hexcircus.casting.patterns.spells.OpBeizerParticle;
+import me.nanorasmus.nanodev.hexcircus.casting.patterns.spells.OpLinearParticle;
 import net.minecraft.util.Identifier;
 
 public class RegisterPatterns {
