@@ -1,10 +1,10 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
+    id 'org.jetbrains.kotlin.jvm'
 }
 loom {
     forge {
-        mixinConfig "hex_vr-common.mixins.json"
-        mixinConfig "hex_vr.mixins.json"
+        mixinConfig "hex_circus.mixins.json"
     }
 }
 architectury {
@@ -41,6 +41,7 @@ dependencies {
     // I don't know what this is but I'm scared to remove it
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 processResources {
@@ -92,4 +93,10 @@ publishing {
     repositories {
         // Add repositories to publish to here.
     }
+}
+repositories {
+    mavenCentral()
+}
+kotlin {
+    jvmToolchain(17)
 }

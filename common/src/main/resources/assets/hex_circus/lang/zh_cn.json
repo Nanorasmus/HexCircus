@@ -6,7 +6,7 @@
   "hexcasting.spell.hex_circus:linear_particle": "线性粒子",
   "hexcasting.spell.hex_circus:bezier_particle": "贝塞尔粒子",
 
-  "hexcasting.entry.circus_particles": "粒子",
+  "hexcasting.entry.circus.particles": "粒子",
 
   "hex_circus.page.particles.opening.0": "深入研习传说中幻术师的魔法之后，我终于找到了演艺视效的秘辛所在！$(br2)后续几页记载了如何操纵转瞬即逝的粒子，它们能为法术带来活力的色彩！",
 

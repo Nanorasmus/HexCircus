@@ -1,3 +1,6 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm'
+}
 architectury {
     common(rootProject.enabled_platforms.split(","))
 }
@@ -14,6 +17,7 @@ dependencies {
 
     modCompileOnly "at.petra-k.paucal:paucal-common-$minecraft_version:$paucalVersion"
     modCompileOnly "at.petra-k.hexcasting:$fabric_hex_casting"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 
 publishing {
@@ -28,4 +32,10 @@ publishing {
     repositories {
         // Add repositories to publish to here.
     }
+}
+repositories {
+    mavenCentral()
+}
+kotlin {
+    jvmToolchain(17)
 }
