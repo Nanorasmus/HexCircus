@@ -36,8 +36,14 @@
       "anchor": "hex_circus:whittle_will",
       "input": "entity",
       "output": "",
-      "text": "hex_circus.page.mind_control.whittle_will"
+      "text": "hex_circus.page.mind_control.whittle_will.0"
     },
+    {
+      "type": "patchouli:text",
+      "text": "hex_circus.page.mind_control.whittle_will.1"
+    },
+
+
     {
       "type": "hexcasting:pattern",
       "op_id": "hex_circus:get_will",

@@ -32,7 +32,8 @@
   "hex_circus.page.mind_control.command_creature.0": "Commands the will of a lesser creature to move to the position at the top of the stack",
   "hex_circus.page.mind_control.command_creature.1": "An ungodly amount of media is wasted to gain control control as the creature tries to resist the command, this varies from species to species",
 
-  "hex_circus.page.mind_control.whittle_will": "Whittles away at the will of the creature at the top of the stack, causing the cost of commanding it to halve. I should be careful with this, as a creature completely losing it's will to live results in cardiac arrest",
+  "hex_circus.page.mind_control.whittle_will.0": "Whittles away at the will of the creature at the top of the stack, causing the cost of commanding it to halve.",
+  "hex_circus.page.mind_control.whittle_will.1": "I should be careful with this, as a creature completely losing it's will to live results in cardiac arrest.$(br2)$(br2)Costs media equivalent to 64 charged amethyst",
 
   "hex_circus.page.mind_control.get_will": "Takes the creature at the top of the stack and replaces it with the amount of media in dust required to command it's mind, or null if commanding it is not possible.",
 

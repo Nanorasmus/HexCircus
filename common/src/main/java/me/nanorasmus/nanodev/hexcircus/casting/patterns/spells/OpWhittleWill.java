@@ -45,7 +45,7 @@ public class OpWhittleWill implements ConstMediaAction {
     public int getArgc() { return 1; }
 
     @Override
-    public int getMediaCost() { return MediaConstants.CRYSTAL_UNIT * 16; }
+    public int getMediaCost() { return MediaConstants.CRYSTAL_UNIT * 64; }
 
     @NotNull
     @Override
