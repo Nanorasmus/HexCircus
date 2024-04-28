@@ -7,10 +7,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;
 import net.minecraft.entity.mob.*;
-import net.minecraft.entity.passive.CowEntity;
-import net.minecraft.entity.passive.PassiveEntity;
-import net.minecraft.entity.passive.PigEntity;
-import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.entity.passive.*;
 import net.minecraft.nbt.NbtCompound;
 
 import java.util.UUID;
@@ -41,10 +38,13 @@ public class EntityManagement {
         }
 
         // Fallbacks
-        if (e instanceof AmbientEntity) {
+        if (e instanceof AmbientEntity || e instanceof WaterCreatureEntity) {
             return 4 * MediaConstants.CRYSTAL_UNIT;
         }
-        if (e instanceof PassiveEntity) {
+        if (e instanceof PassiveEntity || e instanceof GolemEntity) {
+            return 8 * MediaConstants.CRYSTAL_UNIT;
+        }
+        if (e instanceof Angerable) {
             return 16 * MediaConstants.CRYSTAL_UNIT;
         }
         if (e instanceof HostileEntity) {
