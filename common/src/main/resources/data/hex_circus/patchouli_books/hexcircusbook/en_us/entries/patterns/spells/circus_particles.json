@@ -31,15 +31,15 @@
 
     {
       "type": "hexcasting:pattern",
-      "op_id": "hex_circus:command_creature",
-      "anchor": "hex_circus:command_creature",
-      "input": "entity",
+      "op_id": "hex_circus:bezier_particle",
+      "anchor": "hex_circus:bezier_particle",
+      "input": "vec, vec, vec, vec, num",
       "output": "",
-      "text": "hex_circus.page.mind_control.command_creature.0"
+      "text": "hex_circus.page.particles.bezier.0"
     },
     {
       "type": "patchouli:text",
-      "text": "hex_circus.page.mind_control.command_creature.1"
+      "text": "hex_circus.page.particles.bezier.1"
     }
   ]
 }

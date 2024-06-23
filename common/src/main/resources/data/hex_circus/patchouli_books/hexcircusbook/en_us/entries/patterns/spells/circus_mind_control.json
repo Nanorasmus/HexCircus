@@ -1,20 +1,19 @@
 {
   "name": "hexcasting.entry.circus.mind_control",
   "category": "hexcasting:patterns/spells",
-  "icon": "minecraft:player_head",
+  "icon": "minecraft:player_head{SkullOwner:Kolish}",
   "sortnum": 3,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "hex_circus.page.crew_control.opening.0"
+      "text": "hex_circus.page.mind_control.opening.0"
     },
     {
       "type": "patchouli:text",
-      "text": "hex_circus.page.crew_control.opening.1"
+      "text": "hex_circus.page.mind_control.opening.1"
     },
-
 
     {
       "type": "hexcasting:pattern",
@@ -29,7 +28,6 @@
       "text": "hex_circus.page.mind_control.command_creature.1"
     },
 
-
     {
       "type": "hexcasting:pattern",
       "op_id": "hex_circus:whittle_will",
@@ -43,13 +41,15 @@
       "text": "hex_circus.page.mind_control.whittle_will.1"
     },
 
-
     {
       "type": "hexcasting:pattern",
       "op_id": "hex_circus:get_will",
       "anchor": "hex_circus:get_will",
       "input": "entity",
-      "output": "num",
+      "output": "num"
+    },
+    {
+      "type": "patchouli:text",
       "text": "hex_circus.page.mind_control.get_will"
     }
   ]

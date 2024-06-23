@@ -6,12 +6,14 @@ import at.petrak.hexcasting.api.spell.casting.CastingContext;
 import at.petrak.hexcasting.api.spell.casting.eval.SpellContinuation;
 import at.petrak.hexcasting.api.spell.iota.Iota;
 import com.google.common.collect.ImmutableList;
+import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Codec;
 import kotlin.Triple;
 import me.nanorasmus.nanodev.hexcircus.casting.mishaps.JavaMishapThrower;
 import me.nanorasmus.nanodev.hexcircus.casting.mishaps.MishapInfluencePlayer;
 import me.nanorasmus.nanodev.hexcircus.casting.mishaps.MishapInvalidCreature;
 import me.nanorasmus.nanodev.hexcircus.entity.EntityManagement;
+import me.nanorasmus.nanodev.hexcircus.mixin.EntityNavigationMixin;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.Activity;
 import net.minecraft.entity.ai.brain.Brain;
@@ -116,8 +118,15 @@ public class OpOvertakeCreature implements SpellAction {
 
         @Override
         public void cast(@NotNull CastingContext ctx) {
-
-            entity.getNavigation().startMovingTo(target.x, target.y, target.z, 1);
+            entity.getNavigation().startMovingAlong(
+                    ((EntityNavigationMixin) entity.getNavigation())
+                            .findPathToAny(
+                                    ImmutableSet.of(new BlockPos(target.x, target.y, target.z)),
+                                    1,
+                                    false,
+                                    0,
+                                    256),
+                    1);
         }
     }
 }
